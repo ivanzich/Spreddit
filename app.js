@@ -1,10 +1,10 @@
 angular.module('spreddit', [])
 .factory('posts', [function() {
 
-	var p = {
-		posts: [{title: 'post1', upvotes: 2}]
+	var o = {
+		posts: [{title: 'test', upvotes: 5}]
 	};
-	return p;
+	return o;
 
 }]);
 
@@ -13,6 +13,7 @@ angular.module('spreddit', [])
 '$scope',
 'posts',
 function($scope, posts) {
+
 	$scope.posts = posts.posts;
 
 	$scope.addPost = function() {
@@ -34,16 +35,16 @@ function($scope, posts) {
 
 angular.module('spreddit', ['ui.router'])
 .config([
-	'$stateProvider',
-	'$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
+'$stateProvider',
+'$urlRouterProvider',
+function($stateProvider, $urlRouterProvider) {
 
-		$stateProvider
+	$stateProvider
 		.state('home', {
 			url: '/home',
 			templateUrl: '/home.html',
 			controller: 'MainCtrl'
 		});
 
-		$urlRouterProvider.otherwise('home');
-	}]);
+	$urlRouterProvider.otherwise('home');
+}]);
