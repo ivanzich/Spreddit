@@ -2,7 +2,7 @@ angular.module('spreddit', [])
 .factory('posts', [function() {
 
 	var p = {
-		posts: []
+		posts: [{title: 'post1', upvotes: 2}]
 	};
 	return p;
 
@@ -10,7 +10,6 @@ angular.module('spreddit', [])
 
 angular.module('spreddit', [])
 .controller('MainCtrl', [
-
 '$scope',
 'posts',
 function($scope, posts) {
