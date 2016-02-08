@@ -50,7 +50,7 @@ angular.module('spreddit')
 'posts',
 function($scope, $stateParams, posts) {
 
-	$scope.posts = posts.posts[$stateParams.id];
+	$scope.post = posts.posts[$stateParams.id];
 
 	$scope.addComment = function() {
 		if($scope.body === '') { return; }
