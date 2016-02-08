@@ -1,9 +1,11 @@
-angular.module('spreddit', [])
+angular.module('spreddit', ['ui.router']);
+
+angular.module('spreddit')
 .factory('posts', [function() {
 
 	var o = {
 		posts: [
-		{title: 'new post', upvotes: 2},
+		{title: 'test post', upvotes: 2},
 		{title: 'portfolio', link: 'http://justinhongj.github.io', upvotes: 3652}
 		]
 	};
@@ -12,7 +14,7 @@ angular.module('spreddit', [])
 
 }]);
 
-angular.module('spreddit', [])
+angular.module('spreddit')
 .controller('MainCtrl', [
 '$scope',
 'posts',
@@ -41,7 +43,7 @@ function($scope, posts) {
 
 }]);
 
-angular.module('spreddit', [])
+angular.module('spreddit')
 .controller('PostsCtrl', [
 '$scope',
 '$stateParams',
@@ -62,7 +64,7 @@ function($scope, $stateParams, posts) {
 
 }]);
 
-angular.module('spreddit', ['ui.router'])
+angular.module('spreddit')
 .config([
 '$stateProvider',
 '$urlRouterProvider',
