@@ -4,10 +4,7 @@ angular.module('spreddit')
 .factory('posts', [function() {
 
 	var o = {
-		posts: [
-		{title: 'test post', upvotes: 2},
-		{title: 'portfolio', link: 'http://justinhongj.github.io', upvotes: 3652}
-		]
+		posts: []
 	};
 
 	return o;
@@ -60,6 +57,10 @@ function($scope, $stateParams, posts) {
 			upvotes: 0
 		});
 		$scope.body = '';
+	};
+
+	$scope.incrementUpvotes = function(comment) {
+		comment.upvotes += 1;
 	};
 
 }]);
