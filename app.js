@@ -14,12 +14,7 @@ angular.module('spreddit', [])
 '$scope',
 'posts',
 function($scope, posts) {
-	$scope.posts = [
-		{title: 'post 1', upvotes: 5},
-		{title: 'post 2', upvotes: 8},
-		{title: 'post 3', upvotes: 12},
-		{title: 'post 4', upvotes: 2}
-	];
+	$scope.posts = posts.posts;
 
 	$scope.addPost = function() {
 		if(!$scope.title || $scope.title === '') {return;}
@@ -37,3 +32,19 @@ function($scope, posts) {
 	};
 
 }]);
+
+angular.module('spreddit', ['ui.router'])
+.config([
+	'$stateProvider',
+	'$urlRouterProvider',
+	function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+		.state('home', {
+			url: '/home',
+			templateUrl: '/home.html',
+			controller: 'MainCtrl'
+		});
+
+		$urlRouterProvider.otherwise('home');
+	}]);
